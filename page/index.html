@@ -68,5 +68,16 @@
 	<script type="text/javascript" src="../common/lib/jquery-1.9.0.min.js"></script>
 	<script type="text/javascript" src="../common/js/sccl.js"></script>
 	<script type="text/javascript" src="../common/js/sccl-util.js"></script>
+	<script type="text/javascript">
+		//进入页面首先打印用户名
+		console.log(" 管理员的名称："+sessionStorage['adminName']);
+		/**功能点1：检查用户的登录情况，则没有登录信息，必须跳转到登录页**/
+		if(!sessionStorage['adminName']){
+		  alert("请先登录");
+		  setTimeout(function(){
+		    location.href = 'login.html';
+		  },50);
+		}
+	</script>
   </body>
 </html>

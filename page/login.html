@@ -21,28 +21,24 @@
             <h1>台管理系统登录</h1>
         </header>
         <div class="login-main">
-			<form action="/manage/login" class="layui-form" method="post">
-				<input name="__RequestVerificationToken" type="hidden" value="">                
+				<form  class="layui-form" id="form-login">
 				<div class="layui-form-item">
-					<label class="login-icon">
-					</label>
-					<input type="text" name="userName" lay-verify="userName" autocomplete="off" placeholder="这里输入登录名" class="layui-input">
+					<label class="login-icon"></label>
+					<input type="text" name="adminName" lay-verify="userName" placeholder="这里输入登录名" class="layui-input">
 				</div>
 				<div class="layui-form-item">
-					<label class="login-icon">
-					</label>
-					<input type="password" name="password" lay-verify="password" autocomplete="off" placeholder="这里输入密码" class="layui-input">
+					<label class="login-icon"></label>
+					<input type="password" name="adminPass" lay-verify="password" placeholder="这里输入密码" class="layui-input">
 				</div>
 				<div class="layui-form-item">
 					<div class="pull-left login-remember">
 						<label>记住帐号？</label>
-
-						<input type="checkbox" name="rememberMe" value="true" lay-skin="switch" title="记住帐号"><div class="layui-unselect layui-form-switch"><i></i></div>
+						<input type="checkbox" value="true" lay-skin="switch" title="记住帐号"><div class="layui-unselect layui-form-switch"><i></i></div>
 					</div>
 					<div class="pull-right">
-						<button class="layui-btn layui-btn-primary" lay-submit="" lay-filter="login">
+						<div class="layui-btn layui-btn-primary" id="bt-login">
 							登录
-						</button>
+						</div>
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -52,24 +48,37 @@
             <p>gift © www.hiyang.cc</p>
         </footer>
     </div>
-    <script src="../common/layui/layui.js"></script>
+   	<script src="../common/lib/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
     <script>
-        layui.use(['layer', 'form'], function () {
-            var layer = layui.layer,
-						$ = layui.jquery,
-						form = layui.form();
-		        form.verify({
-		            userName: function (value) {
-		                if (value === '')
-		                    return '请输入用户名';
-		            },
-		            password: function (value) {
-		                if (value === '')
-		                    return '请输入密码';
-		            }
-		        });
-
-        });
+        /**功能点2：为登录按钮绑定事件监听，实现异步的用户登录**/
+				$('#bt-login').click(function(){
+				  //收集用户的输入，组成一个k=v&k=v形式字符串
+				  var data = $('#form-login').serialize();
+				  console.log(data);
+				  //发起异步请求，进行服务器验证
+				  $.ajax({
+				    type: 'POST',
+				    url:'/admin/data/2_admin_login.php',
+				    data: data,
+				    success: function(result){
+				      if(result.code!==1){  //登录验证失败
+				        alert(result.msg);
+				      }else{//登录验证成功
+				        //把登录相关数据保存在客户端浏览器中，供后续的页面使用
+				        console.log("adminName:"+result.adminName);
+				        sessionStorage['adminName'] = result.adminName;
+				        alert('登录成功');
+				        setTimeout(function(){
+				          location.href ='index.html';
+				        },50);
+				      }
+				    },
+				    error: function(){ 
+				      alert('响应完成,登录失败');
+				      console.log(arguments);
+				    }
+				  });
+				});
     </script>
   </body>
 </html>
