@@ -12,21 +12,29 @@
  </head>
   <body>
   	<br><br><center><font color=green size=3><b>商 品 信 息 列 表</b></font></center><br>
-		<table cellspacing=0 bordercolordark=#FFFFFF width="95%" bordercolorlight=#000000 border=1 align="center" cellpadding="2">
+		<table cellspacing=0 bordercolordark=#FFFFFF width="80%" bordercolorlight=#000000 border=1 align="center" cellpadding="2">
 		<tr bgcolor="#6b8ba8" style="color:FFFFFF">
 		    <td width="20%" align="center" valign="bottom" height="19">商品ID</td>
 		    <td width="20%" align="center" valign="bottom">商品名称</td>
 		    <td width="20%" align="center" valign="bottom">商品价格</td>
-		    <td width="40%" align="center" valign="bottom">商品图片</td>
+		    <td width="20%" align="center" valign="bottom">商品图片地址</td>
+		    <td width="20%" align="center" valign="bottom">商品管理</td>
 		</tr>
 		<?php
-		    //连接到本地mysql数据库
-		    $myconn=$conn = mysqli_connect('localhost','root', 'root', 'gift', 3306);
-		    //用mysql_query函数从user表里读取数据
-		    $sql = "SELECT * FROM gift";
-				$result = mysqli_query($conn,$sql);
-		    $list = mysqli_fetch_all($result, MYSQLI_ASSOC);
-		    echo  json_encode($list);
+			require('1_init.php');
+			$sql = "SELECT * FROM product";
+			$result = mysqli_query($conn,$sql);
+			while($row=mysqli_fetch_array($result)){
+		?>
+		<tr>
+			<td><?php echo $row['pid'];?></td>
+			<td><?php echo $row['pname'];?></td>
+			<td><?php echo $row['price'];?></td>
+			<td><?php echo $row['pic'];?></td>
+			<td><button>修改</button><button>删除</button></td>
+		</tr>
+		<?php    
+			}
 		?>
 		</table>
   </body>

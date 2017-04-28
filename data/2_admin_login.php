@@ -19,3 +19,4 @@ if($row===null){		//查询结果集中没有记录
   $output = ['code'=>1,'adminName'=>$n];
 }
 echo json_encode($output);
+?>

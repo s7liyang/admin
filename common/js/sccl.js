@@ -396,25 +396,25 @@ $(function(){
 	/*菜单json*/
 	var menu = [{"id":"1","name":"主菜单","parentId":"0","url":"","icon":"","order":"1","isHeader":"1","childMenus":[
 					{"id":"3","name":"商品管理","parentId":"1","url":"","icon":"&#xe604;","order":"1","isHeader":"0","childMenus":[
-						{"id":"4","name":"商品列表","parentId":"3","url":"page4.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-						{"id":"5","name":"商品管理","parentId":"3","url":"page5.html","icon":"","order":"1","isHeader":"0","childMenus":""}
+						{"id":"4","name":"商品管理","parentId":"3","url":"product1.php","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"5","name":"添加商品","parentId":"3","url":"product2.php","icon":"","order":"1","isHeader":"0","childMenus":""}
 					]},
 					{"id":"6","name":"订单管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
-						{"id":"7","name":"待付款","parentId":"6","url":"page7.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-						{"id":"8","name":"已付款","parentId":"6","url":"page8.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-						{"id":"9","name":"待发货","parentId":"6","url":"page9.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-						{"id":"10","name":"已完成","parentId":"6","url":"page10.html","icon":"","order":"1","isHeader":"0","childMenus":""}
+						{"id":"7","name":"全部订单","parentId":"6","url":"order1.php","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"8","name":"待发货","parentId":"6","url":"order2.php","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"9","name":"待收货","parentId":"6","url":"order3.php","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"10","name":"已完成","parentId":"6","url":"order4.php","icon":"","order":"1","isHeader":"0","childMenus":""}
 					]},
 					{"id":"11","name":"活动管理","parentId":"1","url":"","icon":"&#xe600;","order":"1","isHeader":"0","childMenus":[
-						{"id":"12","name":"抽奖","parentId":"11","url":"page12.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-						{"id":"13","name":"优惠券","parentId":"11","url":"page13.html","icon":"","order":"1","isHeader":"0","childMenus":""}
+						{"id":"12","name":"抽奖","parentId":"11","url":"activity1.php","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"13","name":"优惠券","parentId":"11","url":"activity2.php","icon":"","order":"1","isHeader":"0","childMenus":""}
 					]},
 				]},
 				{"id":"2","name":"用户管理","parentId":"0","url":"","icon":"","order":"2","isHeader":"1","childMenus":[
-					{"id":"14","name":"用户统计","parentId":"2","url":"page14.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+					{"id":"14","name":"用户统计","parentId":"2","url":"user1.php","icon":"","order":"1","isHeader":"0","childMenus":""},
 					{"id":"15","name":"用户管理","parentId":"2","url":"","icon":"","order":"1","isHeader":"0","childMenus":[
-						{"id":"16","name":"用户资料","parentId":"15","url":"page16.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-						{"id":"17","name":"收货地址","parentId":"15","url":"page17.html","icon":"","order":"1","isHeader":"0","childMenus":""}
+						{"id":"16","name":"用户资料","parentId":"15","url":"user2.php","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"17","name":"收货地址","parentId":"15","url":"user3.php","icon":"","order":"1","isHeader":"0","childMenus":""}
 					]}
 				]}
 				];

@@ -8,11 +8,7 @@
 	<meta name="description" content="scclui为轻量级的网站后台管理系统模版。">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
-    <title>首页</title>
-    
-  </head>
-  
-  <body>
-	page16
-  </body>
+  <title>首页</title>
+ </head>
+  order4
 </html>
