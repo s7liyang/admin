@@ -402,7 +402,7 @@ $(function(){
 					{"id":"6","name":"订单管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
 						{"id":"7","name":"全部订单","parentId":"6","url":"order1.php","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"8","name":"待发货","parentId":"6","url":"order2.php","icon":"","order":"1","isHeader":"0","childMenus":""},
-						{"id":"9","name":"待收货","parentId":"6","url":"order3.php","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"9","name":"已发货","parentId":"6","url":"order3.php","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"10","name":"已完成","parentId":"6","url":"order4.php","icon":"","order":"1","isHeader":"0","childMenus":""}
 					]},
 					{"id":"11","name":"活动管理","parentId":"1","url":"","icon":"&#xe600;","order":"1","isHeader":"0","childMenus":[
@@ -414,7 +414,8 @@ $(function(){
 					{"id":"14","name":"用户统计","parentId":"2","url":"user1.php","icon":"","order":"1","isHeader":"0","childMenus":""},
 					{"id":"15","name":"用户管理","parentId":"2","url":"","icon":"","order":"1","isHeader":"0","childMenus":[
 						{"id":"16","name":"用户资料","parentId":"15","url":"user2.php","icon":"","order":"1","isHeader":"0","childMenus":""},
-						{"id":"17","name":"收货地址","parentId":"15","url":"user3.php","icon":"","order":"1","isHeader":"0","childMenus":""}
+						{"id":"17","name":"收货地址","parentId":"15","url":"user3.php","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"18","name":"添加用户","parentId":"15","url":"user4.php","icon":"","order":"1","isHeader":"0","childMenus":""}
 					]}
 				]}
 				];

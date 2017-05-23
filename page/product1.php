@@ -31,7 +31,10 @@
 			<td><?php echo $row['pname'];?></td>
 			<td><?php echo $row['price'];?></td>
 			<td><?php echo $row['pic'];?></td>
-			<td><button>修改</button><button>删除</button></td>
+			<td>
+				<a href='product_delete.php?id=<?php echo $row['pid'];?>');\">删除</a>
+				<a href='product_updata.php?id=<?php echo $row['pid'];?>');\">修改</a>
+			</td>
 		</tr>
 		<?php    
 			}

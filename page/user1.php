@@ -11,12 +11,12 @@
   <title>首页</title>
  </head>
   <body>
-  	<br><br><center><font color=green size=3><b>全 部 用 户 列 表</b></font></center><br>
+  	<br><br><center><font color=green size=3><b>全 部 用 户 统 计</b></font></center><br>
 		<table cellspacing=0 bordercolordark=#FFFFFF width="90%" bordercolorlight=#000000 border=1 align="center" cellpadding="2">
 		<tr bgcolor="#6b8ba8" style="color:FFFFFF">
 		    <td width="5%" align="center" valign="bottom" height="19">用户编号ID</td>
-		    <td width="10%" align="center" valign="bottom">用户名</td>
-		    <td width="10%" align="center" valign="bottom">密码</td>
+		    <td width="5%" align="center" valign="bottom">用户名</td>
+		    <td width="5%" align="center" valign="bottom">密码</td>
 		    <td width="10%" align="center" valign="bottom">昵称</td>
 		    <td width="5%" align="center" valign="bottom">钱包金额</td>
 		    <td width="10%" align="center" valign="bottom">头像</td>

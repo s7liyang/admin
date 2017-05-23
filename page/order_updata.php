@@ -11,7 +11,19 @@
   <title>首页</title>
  </head>
   <body>
-  	<br><br><center><font color=green size=3><b>全 部 订 单 列 表</b></font></center><br>
+	<?php
+	date_default_timezone_set("PRC");
+	//$db = new MySQLi("localhost","root","root","gift");
+	//!mysqli_connect_error() or die("连接失败！");
+	require('conn.php');
+	$id = $_GET["id"];
+	
+	$sql1 = "select * from my_order where oid='{$id}'";
+	$r1 = $db->query($sql1);
+	$att1 = $r1->fetch_row();
+	?>
+	<form action="order_updatapost.php" method="post">
+		<br><br><center><font color=green size=3><b>修 改 订 单 状 态</b></font></center><br>
 		<table cellspacing=0 bordercolordark=#FFFFFF width="80%" bordercolorlight=#000000 border=1 align="center" cellpadding="2">
 		<tr bgcolor="#6b8ba8" style="color:FFFFFF">
 		    <td width="10%" align="center" valign="bottom" height="19">订单编号ID</td>
@@ -22,42 +34,16 @@
 		    <td width="10%" align="center" valign="bottom">用户ID</td>
 		    <td width="10%" align="center" valign="bottom">操作</td>
 		</tr>
-		<?php
-			date_default_timezone_set("PRC");
-			require('1_init.php');
-			$sql = "SELECT * FROM my_order";
-			$result = mysqli_query($conn,$sql);
-			while($row=mysqli_fetch_array($result)){
-		?>
 		<tr>
-			<td><?php echo $row['oid'];?></td>
-			<td><?php echo $row['price'];?></td>
-			<td><?php echo $row['sumCount'];?></td>
-			<td><?php $t = $row['orderTime']/1000; echo date('Y-m-d H:i:s',$t); ?></td>
-			<td><?php 
-				$status = $row['status'];
-				switch ($status)
-				{
-				 case 1:
-				 echo "1-待发货";
-				 break;
-				 case 2:
-				 echo "2-已发货";
-				 break;
-				 case 3:
-				 echo "3-已完成";
-				 break;
-				}
-			?></td>
-			<td><?php echo $row['userId'];?></td>
-			<td>
-				<a href='order_delete.php?id=<?php echo $row['oid'];?>');\">删除</a>
-				<a href='order_updata.php?id=<?php echo $row['oid'];?>');\">修改状态</a>
-			</td>
+			<td><input type="text" name="oid"      	value="<?php echo $att1[0] ?>" readonly="readonly"/></td>
+			<td><input type="text" name="price"    	value="<?php echo $att1[1] ?>" readonly="readonly"/></td>
+			<td><input type="text" name="sumCount" 	value="<?php echo $att1[2] ?>" readonly="readonly"/></td>
+			<td><input type="text" name="orderTime"	value="<?php $t = $att1[3]/1000; echo date('Y-m-d H:i:s',$t); ?>" readonly="readonly"/></td>
+			<td><input type="text" name="status" 		value="<?php echo $att1[4] ?>" /></td>
+			<td><input type="text" name="userId"   	value="<?php echo $att1[5] ?>" readonly="readonly"/></td>
+			<td><input type="submit"  value="修改数据"/></td>
 		</tr>
-		<?php    
-			}
-		?>
 		</table>
+	</form>
   </body>
 </html>
