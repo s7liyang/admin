@@ -416,7 +416,8 @@ $(function(){
 						{"id":"16","name":"用户资料","parentId":"15","url":"user2.php","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"17","name":"收货地址","parentId":"15","url":"user3.php","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"18","name":"添加用户","parentId":"15","url":"user4.php","icon":"","order":"1","isHeader":"0","childMenus":""}
-					]}
+					]},
+					{"id":"19","name":"意见反馈","parentId":"2","url":"feedback.php","icon":"","order":"1","isHeader":"0","childMenus":""}
 				]}
 				];
 	initMenu(menu,$(".side-menu"));
